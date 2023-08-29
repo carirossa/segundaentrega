@@ -1,19 +1,42 @@
 alert ("Bienvenido a carniceria el Novillo de Bortti");
+// lista productos
 
-const productos = [
-    { id: 1, nombre: "costilla", precio: 2200 },
-    { id: 2, nombre: "vacio", precio: 2100 },
-    { id: 3, nombre: "milanesa", precio: 1900 },
-    { id: 4, nombre: "costeleta", precio: 1100 },
+class Producto {
+  constructor(nombre, precio) {
+      this.nombre = nombre;
+      this.precio = precio;
+  }}
+  const productos = [
+    new Producto("costilla", 2200),
+    new Producto("vacio", 2100),
+    new Producto("milanesa", 1900),
+    new Producto("costeleta", 1100)
 ];
-let todoslosProductos = productos.map((producto) => producto.nombre + " " + "$" + producto.precio);
+
+let todoslosProductos = productos.map((producto) => `${producto.nombre} $${producto.precio}`);
 alert(todoslosProductos.join(" ; "));
 
+// descuento por pago con billetera 
 alert("si paga con billetera Santa fe tiene un 30% de descuento");
+function calcularPrecioConDescuento(precio) {
+  const descuento = 0.3; 
+  return precio * (1 - descuento);
+}
 
-let preciosActualizados = productos.map(item => {
-  let precio_actualizado = item.precio - item.precio * 0.3; 
-  return item.nombre+ " Precio: "+ precio_actualizado + "\n";
+// nuevo precio
+productos.forEach((item) => {
+  const precioConDescuento = calcularPrecioConDescuento(item.precio);
+  alert(`${item.nombre} Precio: $${precioConDescuento}`);
 });
 
-alert(preciosActualizados)
+// sugerencias del cliente
+class Productos {
+  constructor(nombre, precio){
+    this.nombre = nombre;
+    this.precio = precio;
+  }
+}
+
+let nombre = prompt("que nuevo producto te gustaria que agreguemos?")
+let precio = prompt("te gustaria linea economica o premium")
+ alert("tendremos en cuenta tu sugerencia de " + nombre +" "+ precio)
