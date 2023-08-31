@@ -30,13 +30,7 @@ productos.forEach((item) => {
 });
 
 // sugerencias del cliente
-class Productos {
-  constructor(nombre, precio){
-    this.nombre = nombre;
-    this.precio = precio;
-  }
-}
 
-let nombre = prompt("que nuevo producto te gustaria que agreguemos?")
-let precio = prompt("te gustaria linea economica o premium")
- alert("tendremos en cuenta tu sugerencia de " + nombre +" "+ precio)
+let nombreSugerido = prompt("que nuevo producto te gustaria que agreguemos?")
+let precioSugerido = prompt("te gustaria linea economica o premium")
+ alert("tendremos en cuenta tu sugerencia de " + nombreSugerido +" "+ precioSugerido)
